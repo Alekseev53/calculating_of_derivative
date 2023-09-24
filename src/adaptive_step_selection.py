@@ -1,5 +1,6 @@
 class AdaptiveStepSelection:
-    def __init__(self):
+    def __init__(self, tol):
+        self.tol = tol
         pass  # constructor logic
 
     def select_step_size(self, y, t, h, error_estimate):
