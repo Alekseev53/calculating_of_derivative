@@ -15,7 +15,7 @@ def main():
     t = 0.0  # Initial time
     h = 0.1  # Initial step size
 
-    # ... further logic for looping over time steps, updating y, t, and h, etc.
+    print(1/0) #checking if it would work
 
 if __name__ == "__main__":
     main()
