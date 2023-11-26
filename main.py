@@ -31,7 +31,9 @@ for h in h_values:
         
         x = math.pi / 4
         start_time = time.time()
-        derivative = method(test_function, x, h)
+        how_many_iter = pow(10,4)
+        for _ in range(how_many_iter):
+            derivative = method(test_function, x, h)
         elapsed_time = time.time() - start_time
         times[method_name].append(elapsed_time)
 
@@ -41,7 +43,7 @@ for h in h_values:
         accuracies[method_name].append(accuracy)
 
         # Calculate efficiency as accuracy per unit time
-        efficiency = accuracy / elapsed_time if elapsed_time > 0 else float('inf')
+        efficiency =  elapsed_time/accuracy if elapsed_time > 0 else float('inf')
         efficiencies[method_name].append(efficiency)
 
 # Plotting
@@ -62,7 +64,7 @@ for i, method in enumerate(['forward', 'central', 'higher_order']):
 
     axes[i, 0].set_ylabel('Time (s)')
     axes[i, 1].set_ylabel('Accuracy')
-    axes[i, 2].set_ylabel('Efficiency (Accuracy/Time)')
+    axes[i, 2].set_ylabel('Efficiency (Time/Accuracy)')
 
 plt.tight_layout()
 plt.show()
