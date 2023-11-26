@@ -16,7 +16,7 @@ def derivative_test_function(x):
             math.log(1 + x) * math.sin(x)**2 / math.exp(x))
 
 # Generate a range of h values
-h_values = np.logspace(-1, -6, 100)
+h_values = np.logspace(-1, -10, 1000)
 
 # Initialize dictionaries to store times and accuracies
 times = {method: [] for method in ['forward', 'central', 'higher_order']}
